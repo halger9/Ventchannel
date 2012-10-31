@@ -36,7 +36,7 @@
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container-fluid">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -44,7 +44,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Project name</a>
+	  <a class="brand" href="#">Vent Channel</a>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
               Logged in as <a href="#" class="navbar-link">Username</a>
@@ -61,8 +61,8 @@
 
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span3">
-          <div class="well sidebar-nav">
+	<div class="span2">
+	  <div class="well sidebar-nav hidden-tablet hidden-phone">
             <ul class="nav nav-list">
               <li class="nav-header">Sidebar</li>
               <li class="active"><a href="#">Link</a></li>
@@ -83,44 +83,85 @@
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
-        <div class="span9">
-          <div class="hero-unit">
-            <h1>Hello, world!</h1>
-            <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-            <p><a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
-          </div>
+	<div class="span6">
+	      <div id="myCarousel" class="carousel slide">
+		<div class="carousel-inner">
+		  <div class="item active">
+		    <img src="http://i.imgur.com/7CQb8.jpg"  alt="">
+		    <div class="carousel-caption">
+		      <h4>First Thumbnail label</h4>
+		      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img src="http://i.imgur.com/iKTI3.jpg" alt="">
+		    <div class="carousel-caption">
+		      <h4>Second Thumbnail label</h4>
+		      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+		    </div>
+		  </div>
+		  <div class="item">
+		    <img src="http://i.imgur.com/02apJ.jpg" alt="">
+		    <div class="carousel-caption">
+		      <h4>Third Thumbnail label</h4>
+		      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+		    </div>
+		  </div>
+		</div>
+		<a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+		<a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+	      </div>
+	    </div>
+	   </div>
           <div class="row-fluid">
             <div class="span4">
-              <h2>Heading</h2>
+	      <h2>Sports</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
+	      <p><a class="btn" href="#">View Channel &raquo;</a></p>
             </div><!--/span-->
             <div class="span4">
-              <h2>Heading</h2>
+	      <h2>Politics</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
+	      <p><a class="btn" href="#">View Channel &raquo;</a></p>
             </div><!--/span-->
             <div class="span4">
-              <h2>Heading</h2>
+	      <h2>Facebook</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
+	      <p><a class="btn" href="#">View Channel &raquo;</a></p>
             </div><!--/span-->
           </div><!--/row-->
           <div class="row-fluid">
             <div class="span4">
-              <h2>Heading</h2>
+	      <h2>Family</h2>
+	      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+	      <p><a class="btn" href="#">View Channel &raquo;</a></p>
+	    </div><!--/span-->
+	    <div class="span4">
+	      <h2>Friends</h2>
+	      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+	      <p><a class="btn" href="#">View Channel &raquo;</a></p>
+	    </div><!--/span-->
+	    <div class="span4">
+	      <h2>Road Rage</h2>
+	      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+	      <p><a class="btn" href="#">View Channel &raquo;</a></p>
+	    </div><!--/span-->
+	  </div><!--/row-->
+	  <div class="row-fluid">
+	    <div class="span4">
+	      <h2>School</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
+	      <p><a class="btn" href="#">View Channel &raquo;</a></p>
             </div><!--/span-->
             <div class="span4">
               <h2>Heading</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
+	      <p><a class="btn" href="#">View Channel &raquo;</a></p>
             </div><!--/span-->
             <div class="span4">
               <h2>Heading</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-              <p><a class="btn" href="#">View details &raquo;</a></p>
+	      <p><a class="btn" href="#">View Channel &raquo;</a></p>
             </div><!--/span-->
           </div><!--/row-->
         </div><!--/span-->
@@ -137,19 +178,9 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap-transition.js"></script>
-    <script src="js/bootstrap-alert.js"></script>
-    <script src="js/bootstrap-modal.js"></script>
-    <script src="js/bootstrap-dropdown.js"></script>
-    <script src="js/bootstrap-scrollspy.js"></script>
-    <script src="js/bootstrap-tab.js"></script>
-    <script src="js/bootstrap-tooltip.js"></script>
-    <script src="js/bootstrap-popover.js"></script>
-    <script src="js/bootstrap-button.js"></script>
-    <script src="js/bootstrap-collapse.js"></script>
-    <script src="js/bootstrap-carousel.js"></script>
-    <script src="js/bootstrap-typeahead.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
 
   </body>
 </html>
