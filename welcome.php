@@ -1,4 +1,6 @@
-
+<?php
+require_once('facebook_auth.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,13 +49,33 @@
 	  <a class="brand" href="#">Vent Channel</a>
           <div class="nav-collapse collapse">
             <p class="navbar-text pull-right">
-              Logged in as <a href="#" class="navbar-link">Username</a>
+             <a href="#" class="navbar-link"><?php echo $user_profile['name'];?></a>
             </p>
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
+            <li class='dropdown'>
+            		<a href='#' class='dropdown-toggle' data-toggle='dropdown'><b class='icon-user'></b>Login<b class='caret'></b></a>
+              			<div class='dropdown-menu' style='padding: 15px; padding-bottom: 0px;'>
+									<form id='form' class='form' method='post' action='login-beta.php'>
+										<fieldset>
+  											<label class='UsernameLabel'>Email</label>
+												<input type='email' id='Form_Email' name='email' value='' class='InputBox'>
+												<label class='PasswordLabel'>Password</label>
+												<input type='password' id='Form_Password' name='password' value='' class='InputBox Password'>
+												<input type='hidden' name'file' value='<?echo $_POST['file']; ?>'>
+											<input type='submit' id='Form_SignIn' name='Form/Sign_In' value='Sign In' class='btn btn-primary'>
+										</fieldset>
+										<li><fb:login-button></fb:login-button><a/></li>
+ 										<div id="fb-root"></div>
+									</form>
+						</div>
+          		</li>
+
+    
             </ul>
+
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -166,7 +188,61 @@
           </div><!--/row-->
         </div><!--/span-->
       </div><!--/row-->
-
+      <div class='modal hide fade' id='sign-up'>
+      	<div class='modal-header'>
+      		<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
+      		<p align='center'><h2>Sign Up</h2></p>
+      	</div>
+      	<div class='modal-body'>
+      		<form method='post' action='sign-up.php' id='register'>
+			    <fieldset id='inputs'>
+			    	<input id='firstName' name='firstName' type='text' placeholder='First Name' autofocus required>
+			        <input id='lastName' name='lastName' type='text' placeholder='Last Name' required>
+			        <input id='email1' name='email1' type='email' placeholder='Email' required>
+			        <input id='email2' name='email2' type='email' placeholder='Verify Email' required>
+			        <input id='employeeId' name='employeeId' type='text' placeholder='Employee ID' required>   
+			        <input id='password' autocomplete='off' name='password' type='password' placeholder='Password' required>
+			    </fieldset>
+			    <fieldset id='select'>
+					<select class='select' name='costCenter' id='costCenter'> 
+						<option class='option' value=''>---Cost Center---</option>
+						<option class='option' value='69333'>Implementation Services</option>
+						<option class='option' value='69101'>Cloud Operations</option>
+						<option class='option' value='69501'>SIS Operations</option>
+						<option class='option' value='69555'>Quality Assurance</option>
+						<option class='option' value='69599'>Development</option>
+					</select>
+			    </fieldset>
+			    <fieldset id='actions'>
+			        <input type='submit' id='submit'  class='btn btn-primary' value='Register'>
+			    </fieldset>
+			
+			</form>
+					    <script>
+			      window.fbAsyncInit = function() {
+				FB.init({
+				  appId: '<?php echo $facebook->getAppID() ?>',
+				  cookie: true,
+				  xfbml: true,
+				  oauth: true
+				});
+				FB.Event.subscribe('auth.login', function(response) {
+				  window.location.reload();
+				});
+				FB.Event.subscribe('auth.logout', function(response) {
+				  window.location.reload();
+				});
+			      };
+			      (function() {
+				var e = document.createElement('script'); e.async = true;
+				e.src = document.location.protocol +
+				  '//connect.facebook.net/en_US/all.js';
+				document.getElementById('fb-root').appendChild(e);
+			      }());
+			    </script>
+      	</div>
+      </div>
+				
       <hr>
 
       <footer>
