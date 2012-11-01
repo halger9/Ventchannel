@@ -1,5 +1,6 @@
 <?php
 require_once('facebook_auth.php');
+//$logoutUrl = $facebook->getLogoutUrl();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +53,6 @@ require_once('facebook_auth.php');
               <li class="active"><a href="#">Home</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
-            <li class='dropdown'>
             </ul>
             <?php if ($user) {
             echo "<ul class='nav pull-right'>
@@ -77,7 +77,6 @@ require_once('facebook_auth.php');
 												<input type='email' id='Form_Email' name='email' value='' class='InputBox'>
 												<label class='PasswordLabel'>Password</label>
 												<input type='password' id='Form_Password' name='password' value='' class='InputBox Password'>
-												<input type='hidden' name'file' value='<?echo $_POST['file']; ?>'>
 											<input type='submit' id='Form_SignIn' name='Form/Sign_In' value='Sign In' class='btn btn-primary'>
 										</fieldset>
 										<span> or </span>
@@ -86,6 +85,8 @@ require_once('facebook_auth.php');
 									</form> 
 						</div>
           		</li>
+            </ul>";
+            }?>
           </div><!--/.nav-collapse -->
         </div>
       </div>
@@ -266,6 +267,29 @@ require_once('facebook_auth.php');
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src='js/facebook-btn.js'></script>
+        					    <script>
+			      window.fbAsyncInit = function() {
+				FB.init({
+				  appId: '<?php echo $facebook->getAppID() ?>',
+				  cookie: true,
+				  xfbml: true,
+				  oauth: true
+				});
+				FB.Event.subscribe('auth.login', function(response) {
+				  window.location.reload();
+				});
+				FB.Event.subscribe('auth.logout', function(response) {
+				  window.location.reload();
+				});
+			      };
+			      (function() {
+				var e = document.createElement('script'); e.async = true;
+				e.src = document.location.protocol +
+				  '//connect.facebook.net/en_US/all.js';
+				document.getElementById('fb-root').appendChild(e);
+			      }());
+			    </script>
 
 
   </body>
