@@ -53,6 +53,22 @@ require_once('facebook_auth.php');
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
             <li class='dropdown'>
+            </ul>
+            <?php if ($user) {
+            echo "<ul class='nav pull-right'>
+            	<li class='dropdown'>
+            		<a href='#' class='dropdown-toggle' data-toggle='dropdown'><b class='icon-user'></b>".$user_profile['name']."<b class='caret'></b></a>
+              			<div class='dropdown-menu' style='padding: 15px; padding-bottom: 0px;'>
+									<form id='form' class='form' method='post' action='login-beta.php'>
+									<li><a href='#'>Settings</a></li>
+ 									<li><a href='#'>Profile</a></li>	
+									<li><a href=".$logoutUrl.">Log Out</a></li>
+									</form> 
+						</div>
+          		</li>
+            </ul>";}else{
+            	 echo "<ul class='nav pull-right'>
+            	<li class='dropdown'>
             		<a href='#' class='dropdown-toggle' data-toggle='dropdown'><b class='icon-user'></b>Login<b class='caret'></b></a>
               			<div class='dropdown-menu' style='padding: 15px; padding-bottom: 0px;'>
 									<form id='form' class='form' method='post' action='login-beta.php'>
@@ -64,15 +80,12 @@ require_once('facebook_auth.php');
 												<input type='hidden' name'file' value='<?echo $_POST['file']; ?>'>
 											<input type='submit' id='Form_SignIn' name='Form/Sign_In' value='Sign In' class='btn btn-primary'>
 										</fieldset>
-										<li><fb:login-button></fb:login-button><a/></li>
- 										<div id="fb-root"></div>
-									</form>
+										<span> or </span>
+										<li><fb:login-button></fb:login-button></li>
+ 										<div id='fb-root'></div>
+									</form> 
 						</div>
           		</li>
-
-    
-            </ul>
-
           </div><!--/.nav-collapse -->
         </div>
       </div>
