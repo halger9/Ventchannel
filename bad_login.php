@@ -1,5 +1,6 @@
 <?php
 ob_start();
+require_once('facebook_auth.php');
 error_reporting(E_ALL ^ E_NOTICE);
 session_start();
 if($_SESSION['message'] == 1 ){
@@ -11,11 +12,12 @@ $error = 'Bad Username or Password. Please sign in again.';
 	}elseif(!isset($_GET['message'])){
 		$error = 'Something went wrong. Please sign in again.';
 	}
-echo" <!DOCTYPE html>
+?>
+ <!DOCTYPE html>
 <html lang='en'>
   <head>
     <meta charset='utf-8'>
-    <title>Pearson AWS Portal</title>
+    <title>VentChannel</title>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta name='description' content=''>
     <meta name='author' content=''>
@@ -61,12 +63,12 @@ echo" <!DOCTYPE html>
     </div>
     <div class='alert alert-error'>
   <button type='button' class='close' data-dismiss='alert'>×</button>
-  <h4 align='center'>Uh Oh! ".$error."</h4>
+  <h4 align='center'>Uh Oh! "<?php echo $error;?>"</h4>
 		</div>
 	<div class='container'>
 	  <div class='hero-unit' align='center'>
-	    <h1>AWS Portal</h1>
-	    <p>Create new AWS instances, volumes for QA and Development purposes with the help of the AWS APIs, all in real-time.</p>
+	    <h1>Vent Channel</h1>
+	    <p>The place to bitch and moan about anything and everything.</p>
 	    <p><a class='btn btn-primary btn-large' href='//aws.amazon.com/what-is-aws/'>Learn more &raquo;</a></p>
 	  </div>
 
@@ -89,6 +91,9 @@ echo" <!DOCTYPE html>
 												<input type='hidden' name='file' value=''>
 											<input type='submit' name='submit' value='Sign In' class='btn btn-primary'>
 										</fieldset>
+										<span> or </span><br>
+										<a><fb:login-button></fb:login-button></a>
+ 										<div id='fb-root'></div>
 									</form>
 			      </div>
 			    </div>
@@ -129,6 +134,29 @@ echo" <!DOCTYPE html>
     <!-- Placed at the end of the document so the pages load faster -->
     <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
     <script src='js/bootstrap.js'></script>
+
+    					    <script>
+			      window.fbAsyncInit = function() {
+				FB.init({
+				  appId: '<?php echo $facebook->getAppID() ?>',
+				  cookie: true,
+				  xfbml: true,
+				  oauth: true
+				});
+				FB.Event.subscribe('auth.login', function(response) {
+				  window.location.reload();
+				});
+				FB.Event.subscribe('auth.logout', function(response) {
+				  window.location.reload();
+				});
+			      };
+			      (function() {
+				var e = document.createElement('script'); e.async = true;
+				e.src = document.location.protocol +
+				  '//connect.facebook.net/en_US/all.js';
+				document.getElementById('fb-root').appendChild(e);
+			      }());
+			    </script>
 
   </body>
 </html>";

@@ -50,7 +50,7 @@ if ($user) {
 }
 
 // This call will always work since we are fetching public data.
-$naitik = $facebook->api('/ericadams');
+$naitik = $facebook->api('/heath.alger');
 
 ?>
 <!doctype html>
