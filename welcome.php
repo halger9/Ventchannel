@@ -48,9 +48,6 @@ require_once('facebook_auth.php');
           </a>
 	  <a class="brand" href="#">Vent Channel</a>
           <div class="nav-collapse collapse">
-            <p class="navbar-text pull-right">
-             <a href="#" class="navbar-link"><?php echo $user_profile['name'];?></a>
-            </p>
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
               <li><a href="#about">About</a></li>
