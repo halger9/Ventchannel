@@ -32,4 +32,13 @@ if ($user) {
 } else {
   $loginUrl = $facebook->getLoginUrl();
 }
+
+$first_name = $user_profile['first_name'];
+$last_name = $user_profile['last_name'];
+$name = $user_profile['name'];
+$username = $user_profile['username'];
+$link = $user_profile['link'];
+$userid = $user_profile['id'];
+$img = 'https://graph.facebook.com/'.$userid.'/picture';
+
 ?>

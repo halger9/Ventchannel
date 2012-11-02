@@ -15,5 +15,5 @@ unset($_SESSION['loginTime']);
 unset($_SESSION['hash']);
 unset($_SESSION['LAST_ACTIVITY']);
 session_destroy();
-header("location:login.php");
+header("location:welcome.php");
 ?>

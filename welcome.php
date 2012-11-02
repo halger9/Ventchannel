@@ -1,18 +1,27 @@
 <?php
 require_once('facebook_auth.php');
-//$logoutUrl = $facebook->getLogoutUrl();
+	$me = $_SESSION['me'];
+	$name = $me['displayName'];
+if($_SESSION['message'] == 1){
+	unset($_SESSION['authUrl']);
+	}
+if($_SESSION['authUrl']){
+	$authUrl = $_SESSION['authUrl'];
+	header('location:'.$authUrl);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <title>VentChannel, Bitches!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Le styles -->
     <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/zocial.css" rel="stylesheet">
     <style type="text/css">
       body {
         padding-top: 60px;
@@ -57,16 +66,31 @@ require_once('facebook_auth.php');
             <?php if ($user) {
             echo "<ul class='nav pull-right'>
             	<li class='dropdown'>
-            		<a href='#' class='dropdown-toggle' data-toggle='dropdown'><b class='icon-user'></b>".$user_profile['name']."<b class='caret'></b></a>
+            		<a href='#' class='dropdown-toggle' data-toggle='dropdown'>".$user_profile['name']."<b class='caret'></b></a>
               			<div class='dropdown-menu' style='padding: 15px; padding-bottom: 0px;'>
 									<form id='form' class='form' method='post' action='login-beta.php'>
+									<li><img src=".$img."></li>
 									<li><a href='#'>Settings</a></li>
  									<li><a href='#'>Profile</a></li>	
 									<li><a href=".$logoutUrl.">Log Out</a></li>
 									</form> 
 						</div>
           		</li>
-            </ul>";}else{
+            </ul>";}elseif ($name){
+            	
+            echo "<ul class='nav pull-right'>
+            	<li class='dropdown'>
+            		<a href='#' class='dropdown-toggle' data-toggle='dropdown'>".$name."<b class='caret'></b></a>
+              			<div class='dropdown-menu' style='padding: 15px; padding-bottom: 0px;'>
+									<form id='form' class='form' method='post' action='logout.php'>
+									<li><a href='#'>Settings</a></li>
+ 									<li><a href='#'>Profile</a></li>	
+									<button class='zocial googleplus' href='https://accounts.google.com/logout'>Log Out
+									</form> 
+						</div>
+          		</li>
+            </ul>";}
+            else{
             	 echo "<ul class='nav pull-right'>
             	<li class='dropdown'>
             		<a href='#' class='dropdown-toggle' data-toggle='dropdown'><b class='icon-user'></b>Login<b class='caret'></b></a>
@@ -74,15 +98,18 @@ require_once('facebook_auth.php');
 									<form id='form' class='form' method='post' action='login-beta.php'>
 										<fieldset>
   											<label class='UsernameLabel'>Email</label>
-												<input type='email' id='Form_Email' name='email' value='' class='InputBox'>
+												<input type='email' id='Form_Email' name='email' value='' class='InputBox' required>
 												<label class='PasswordLabel'>Password</label>
-												<input type='password' id='Form_Password' name='password' value='' class='InputBox Password'>
+												<input type='password' id='Form_Password' name='password' value='' class='InputBox Password' required>
 											<input type='submit' id='Form_SignIn' name='Form/Sign_In' value='Sign In' class='btn btn-primary'>
 										</fieldset>
 										<span> or </span>
-										<li><fb:login-button></fb:login-button></li>
+										<li><fb:login-button></fb:login-button>
  										<div id='fb-root'></div>
-									</form> 
+									</form>
+									<form id='google' action='assets/google-api-php-client/examples/plus/simple.php'>
+									<button class='zocial googleplus'>Log In
+									</form>
 						</div>
           		</li>
             </ul>";
