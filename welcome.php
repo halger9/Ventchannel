@@ -23,12 +23,43 @@ if($_SESSION['authUrl']){
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/zocial.css" rel="stylesheet">
     <style type="text/css">
+    /* Sticky footer styles
+      -------------------------------------------------- */
+
+      html,
       body {
-        padding-top: 60px;
-        padding-bottom: 40px;
+        height: 100%;
+        padding-top: 40px;
+        padding-bottom: 20px;
+        /* The html and body elements cannot have any padding or margin. */
       }
-      .sidebar-nav {
-        padding: 9px 0;
+
+      /* Wrapper for page content to push down footer */
+      #wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        /* Negative indent footer by it's height */
+        margin: 0 auto -60px;
+      }
+
+      /* Set the fixed height of the footer here */
+      #push,
+      #footer {
+        height: 60px;
+      }
+      #footer {
+        background-color: #555555;
+      }
+
+      /* Lastly, apply responsive CSS fixes as necessary */
+      @media (max-width: 767px) {
+        #footer {
+          margin-left: -20px;
+          margin-right: -20px;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
       }
     </style>
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
@@ -55,8 +86,8 @@ if($_SESSION['authUrl']){
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </a>
-	  <a class="brand" href="#">Vent Channel</a>
+          </a>    
+	  <a class="brand" href="#"><img src='http://dl.dropbox.com/u/7735813/ventchannel_logo_neongreen_100x100.png' height='25' width='25'>&nbspVent Channel</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
@@ -93,7 +124,7 @@ if($_SESSION['authUrl']){
             else{
             	 echo "<ul class='nav pull-right'>
             	<li class='dropdown'>
-            		<a href='#' class='dropdown-toggle' data-toggle='dropdown'><b class='icon-user'></b>Login<b class='caret'></b></a>
+            		<a href='#' class='dropdown-toggle' data-toggle='dropdown'><b class='icon-user icon-white'></b>Login<b class='caret'></b></a>
               			<div class='dropdown-menu' style='padding: 15px; padding-bottom: 0px;'>
 									<form id='form' class='form' method='post' action='login-beta.php'>
 										<fieldset>
@@ -118,111 +149,58 @@ if($_SESSION['authUrl']){
         </div>
       </div>
     </div>
-
+	<div class='wrap'>
     <div class="container-fluid">
       <div class="row-fluid">
-	<div class="span2">
-	  <div class="well sidebar-nav hidden-tablet hidden-phone">
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li class="active"><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Sidebar</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-	<div class="span6">
-	      <div id="myCarousel" class="carousel slide">
-		<div class="carousel-inner">
-		  <div class="item active">
-		    <img src="http://i.imgur.com/7CQb8.jpg"  alt="">
-		    <div class="carousel-caption">
-		      <h4>First Thumbnail label</h4>
-		      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-		    </div>
-		  </div>
-		  <div class="item">
-		    <img src="http://i.imgur.com/iKTI3.jpg" alt="">
-		    <div class="carousel-caption">
-		      <h4>Second Thumbnail label</h4>
-		      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-		    </div>
-		  </div>
-		  <div class="item">
-		    <img src="http://i.imgur.com/02apJ.jpg" alt="">
-		    <div class="carousel-caption">
-		      <h4>Third Thumbnail label</h4>
-		      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-		    </div>
-		  </div>
-		</div>
-		<a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-		<a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
-	      </div>
-	    </div>
-	   </div>
-          <div class="row-fluid">
-            <div class="span4">
+            <div class="span4"><a href='#'>
 	      <h2>Sports</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-	      <p><a class="btn" href="#">View Channel &raquo;</a></p>
-            </div><!--/span-->
-            <div class="span4">
+	      
+           </a></div><!--/span-->
+            <div class="span4"><a href='#'>
 	      <h2>Politics</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-	      <p><a class="btn" href="#">View Channel &raquo;</a></p>
-            </div><!--/span-->
-            <div class="span4">
+	      
+            </a></div><!--/span-->
+            <div class="span4"><a href='#'>
 	      <h2>Facebook</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-	      <p><a class="btn" href="#">View Channel &raquo;</a></p>
-            </div><!--/span-->
-          </div><!--/row-->
+	      
+          </a></div><!--/span-->
+          <!--</div><!--/row-->
           <div class="row-fluid">
-            <div class="span4">
+            <div class="span4"><a href='#'>
 	      <h2>Family</h2>
 	      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-	      <p><a class="btn" href="#">View Channel &raquo;</a></p>
-	    </div><!--/span-->
-	    <div class="span4">
+	      
+	    </a></div><!--/span-->
+	    <div class="span4"><a href='#'>
 	      <h2>Friends</h2>
 	      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-	      <p><a class="btn" href="#">View Channel &raquo;</a></p>
-	    </div><!--/span-->
-	    <div class="span4">
+	      
+	    </a></div><!--/span-->
+	    <div class="span4"><a href='#'>
 	      <h2>Road Rage</h2>
 	      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-	      <p><a class="btn" href="#">View Channel &raquo;</a></p>
-	    </div><!--/span-->
+	      
+	    </a></div><!--/span-->
 	  </div><!--/row-->
-	  <div class="row-fluid">
-	    <div class="span4">
+	  <div class="row-fluid"> 
+	    <div class="span4"><a href='#'>
 	      <h2>School</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-	      <p><a class="btn" href="#">View Channel &raquo;</a></p>
-            </div><!--/span-->
-            <div class="span4">
+	      
+            </a></div><!--/span-->
+            <div class="span4"><a href='#'>
               <h2>Heading</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-	      <p><a class="btn" href="#">View Channel &raquo;</a></p>
-            </div><!--/span-->
-            <div class="span4">
+	      
+            </a></div><!--/span-->
+            <div class="span4"><a href='#'>
               <h2>Heading</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-	      <p><a class="btn" href="#">View Channel &raquo;</a></p>
-            </div><!--/span-->
+	      
+            </a></div><!--/span-->
           </div><!--/row-->
         </div><!--/span-->
       </div><!--/row-->
@@ -279,15 +257,16 @@ if($_SESSION['authUrl']){
 			      }());
 			    </script>
       	</div>
-      </div>
-				
-      <hr>
-
-      <footer>
-        <p>&copy; Company 2012</p>
-      </footer>
-
     </div><!--/.fluid-container-->
+    </div>
+    <hr>
+<div id="push"></div>
+    <div id="" align='center'>
+      <div class="navbar navbar-fixed-bottom">
+        <p class="muted credit">Vent Channel &copy 2012 </p>
+      </div>
+    </div>
+    </body>
 
     <!-- Le javascript
     ================================================== -->
@@ -318,6 +297,4 @@ if($_SESSION['authUrl']){
 			      }());
 			    </script>
 
-
-  </body>
 </html>
