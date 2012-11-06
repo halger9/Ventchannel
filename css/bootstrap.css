@@ -2029,10 +2029,10 @@ input[type="button"].btn-block {
 .btn-primary {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #006dcc;
+  background-color: #69BE28;
   background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
-  background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+  background-image: -webkit-linear-gradient(top, #69be20, #69be28);
   background-image: -o-linear-gradient(top, #0088cc, #0044cc);
   background-image: linear-gradient(to bottom, #0088cc, #0044cc);
   background-repeat: repeat-x;
@@ -2050,8 +2050,8 @@ input[type="button"].btn-block {
 .btn-primary.disabled,
 .btn-primary[disabled] {
   color: #ffffff;
-  background-color: #0044cc;
-  *background-color: #003bb3;
+  background-color: #69BE28;
+  *background-color: #69BE28;
 }
 .btn-primary:active,
 .btn-primary.active {
@@ -4531,9 +4531,10 @@ overflow-y: auto;
   padding: 5px 0;
   margin: 2px 0 0;
   list-style: none;
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: #353535;
+  color: #ffffff;
+  border: 5px shadow #ccc;
+  border: 5px shadow rgba(0, 0, 0, 0.2);
   *border-right-width: 2px;
   *border-bottom-width: 2px;
   -webkit-border-radius: 6px;
@@ -4565,7 +4566,7 @@ overflow-y: auto;
   clear: both;
   font-weight: normal;
   line-height: 20px;
-  color: #333333;
+  color: #ffffff;
   white-space: nowrap;
 }
 .dropdown-menu li > a:hover,
@@ -4663,6 +4664,7 @@ overflow-y: auto;
 .dropdown .dropdown-menu .nav-header {
   padding-left: 20px;
   padding-right: 20px;
+  background-color: #555555;
 }
 .typeahead {
   margin-top: 2px;
